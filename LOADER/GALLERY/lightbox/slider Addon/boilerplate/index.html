@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: Raleway;
+			}
+
+			h1 {
+				text-align: center;
+				padding: 5rem;
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(3, 200px);
+				justify-content: center;
+				align-content: center;
+				grid-gap: 10px;
+				height: 70vh;
+			}
+
+			.grid img {
+				width: 200px;
+				height: 200px;
+				cursor: pointer;
+			}
+
+			.lightbox {
+				position: fixed;
+				z-index: 1000;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.8);
+				display: none;
+			}
+
+			.lightbox.active {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.lightbox img {
+				width: 100%;
+				height: auto;
+				padding: 5rem;
+				background-color: rgb(255, 255, 255);
+			}
+
+			img {
+				cursor: pointer;
+			}
+
+			/* slider style */
+
+			.slider-wrapper {
+				position: relative;
+				width: 80%;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.slider {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 70%;
+			}
+
+			.slider-wrapper .slider .img-gallery {
+				position: absolute;
+				width: 90%;
+				height: auto;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			#prevBtn {
+				position: absolute;
+				top: 50%;
+				left: 0%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+			}
+
+			#nextBtn {
+				position: absolute;
+				top: 50%;
+				right: 0%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+			}
+
+			.slider-wrapper span {
+				position: absolute;
+				display: inline-block;
+				width: 200px;
+				height: 50px;
+				top: 95%;
+				right: 0%;
+				font-size: 1rem;
+				color: white;
+				vertical-align: middle;
+				z-index: 9999;
+			}
+		</style>
+
+		<h1>Image Gallery</h1>
+
+		<div class="grid">
+			<img src="https://source.unsplash.com/400x400?mountain" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?nature" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?valley" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?beach" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?ocean" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?water" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?trees" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?lake" class="img-gallery" />
+			<img src="https://source.unsplash.com/400x400?cliff" class="img-gallery" />
+		</div>
+
+		<div id="lightbox" class="lightbox">
+			<div class="slider-wrapper">
+				<div class="slider"></div>
+				<button id="prevBtn">&#8678;</button>
+				<button id="nextBtn">&#8680;</button>
+				<span></span>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
